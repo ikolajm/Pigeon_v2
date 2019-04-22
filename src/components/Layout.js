@@ -4,7 +4,7 @@ import { USER_CONNECTED, LOGOUT, VERIFY_USER } from '../Events';
 import Login from './Login.js';
 import ChatContainer from './chats/ChatContainer';
 
-const socketURL = 'http://localhost:3001';
+const socketURL = '/';
 
 export default class Layout extends Component {
     constructor(props) {
