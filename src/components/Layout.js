@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
-import { USER_CONNECTED, LOGOUT } from '../Events';
+import { USER_CONNECTED, LOGOUT, VERIFY_USER } from '../Events';
 import Login from './Login.js';
 import ChatContainer from './chats/ChatContainer';
 
@@ -14,14 +14,14 @@ export default class Layout extends Component {
             user: null
         }
     }
-
+    
     componentWillMount() {
         this.initSocket();
     }
 
     // Connect and initialize socket
     initSocket = () => {
-        const socket = io(socketUrl)
+        const socket = io(socketURL)
 
         socket.on('connect', ()=>{
             if(this.state.user){
