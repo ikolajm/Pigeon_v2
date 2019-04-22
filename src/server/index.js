@@ -1,5 +1,6 @@
 require('dotenv').config()
-const app = require('express')();
+const express = require('express');
+const app = express();
 const http = require('http').Server(app);
 const io = module.exports.io = require('socket.io')(http);
 
