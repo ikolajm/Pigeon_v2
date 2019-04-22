@@ -37,9 +37,9 @@ export default class Layout extends Component {
     // Verfies user on reconnect
     reconnect = socket => {
 		socket.emit(VERIFY_USER, this.state.user.name, ({ isUser, user })=>{
-			if(isUser){
-				this.setState({ user:null })
-			}else{
+			if (isUser) {
+				this.setState({ user: null })
+			} else {
 				this.setUser(user)
 			}
 		})
